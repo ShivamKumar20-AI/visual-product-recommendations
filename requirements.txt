@@ -1,0 +1,23 @@
+# Image processing.
+Pillow
+
+# Optional support for CSV and metadata files.
+pandas
+
+# Progress bars for long-running operations.
+tqdm
+
+# Numerical arrays.
+numpy
+
+# Deep-learning framework used by CLIP.
+torch
+
+# Pre-trained CLIP model and processor.
+transformers
+
+# Creates the required recommendation result figure.
+matplotlib
+
+# Creates the web interface.
+streamlit
