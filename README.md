@@ -7,7 +7,7 @@ A simple AI app that recommends clothing items that look similar to an uploaded 
 ## Live app
 
 Use the app here:
-https://visual-appuct-recommendations.streamlit.app/
+[https://visual-appuct-recommendations.streamlit.app/](https://visual-clothing-recommendations.streamlit.app/)
 
 ## What the app does
 
