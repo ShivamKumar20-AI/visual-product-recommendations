@@ -21,3 +21,7 @@ matplotlib
 
 # Creates the web interface.
 streamlit
+
+# Deep-learning framework and computer-vision utilities.
+torch
+torchvision

@@ -10,5 +10,9 @@ Data/raw/
 *.zip
 *.csv
 
+Data/
+artifacts/
+
+
 .ipynb_checkpoints/
 .streamlit/secrets.toml
