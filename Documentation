@@ -1,0 +1,35 @@
+# Visual Product Recommendations Documentation
+
+## Project overview
+
+This project is an AI-powered visual product recommendation system for a fashion retailer. A user uploads an image of a clothing item, and the application returns the five most visually similar items from the retailer's product catalogue.
+
+The app is built with Python and Streamlit. It uses a pre-trained CLIP computer vision model to understand visual features in clothing images, including colour, garment type, pattern, shape, texture, and overall style.
+
+## Approach used
+
+The dataset initially contained 50,293 clothing images. A data-cleaning script checked that images were valid and removed exact duplicate files. The final cleaned catalogue contained 31,378 unique images, with no invalid images found.
+
+Each cleaned product image was processed using the CLIP image encoder. CLIP converts each image into a numeric vector called an embedding. These embeddings represent the visual characteristics of each clothing item.
+
+The embeddings for all catalogue images were saved locally along with their matching image paths. This means the full catalogue does not need to be processed again each time a user uploads an image.
+
+When a user uploads a new image, the app creates an embedding for that image and compares it against every saved catalogue embedding. Cosine similarity is used to calculate how visually similar the uploaded item is to each catalogue item. The five highest-scoring images are displayed with their cosine similarity scores.
+
+## Limitations
+
+The model uses visual information only. It does not currently use product metadata such as clothing size, price, brand, category, availability, or customer preferences.
+
+Cosine similarity measures how close image embeddings are, but a high score does not always guarantee that two items are functionally identical. For example, two clothing items may have similar colours or backgrounds but be different garment types.
+
+The model may be influenced by image quality, lighting, background objects, pose, or whether a person is wearing the clothing. Recommendation speed may also reduce as the catalogue becomes much larger because the uploaded image is compared with every saved embedding.
+
+## Further improvements
+
+Future versions could use the available metadata to filter recommendations by product type, size, price, brand, or availability.
+
+The model could be fine-tuned on fashion-specific images to improve its understanding of clothing categories and styles. Image preprocessing could also remove or reduce background information so the model focuses more strongly on the garment.
+
+For a larger production catalogue, a vector database or similarity-search library such as FAISS could replace the direct comparison against every embedding, improving recommendation speed.
+
+The user interface could also add filters, recommendation explanations, product links, and user feedback such as "relevant" or "not relevant" to support future model improvement.
